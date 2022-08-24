@@ -19,10 +19,20 @@ from django.urls import path
 
 
 def my_view(request):
-    return HttpResponse('Alguma coisa')
+    return HttpResponse('Home')
+
+
+def my_about(request):
+    return HttpResponse('Sobre')
+
+
+def my_contact(request):
+    return HttpResponse('Contato')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sobre/', my_view)
+    path('', my_view),  # home
+    path('sobre/', my_about),  # sobre
+    path('contato/', my_contact)  # contato
 ]
